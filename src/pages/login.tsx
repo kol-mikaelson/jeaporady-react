@@ -9,6 +9,7 @@ const LoginPage = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { login } = useAuth();
+  const ALLOWED_EMAIL = "admin@litsoc.com";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,7 +17,11 @@ const LoginPage = () => {
       setError('');
       setLoading(true);
       await login(email, password);
-      navigate('/home');
+      if (email == ALLOWED_EMAIL){
+        navigate('/restricted')
+      }else{
+        navigate('/home');
+      }
     } catch (error) {
       setError('Failed to sign in. Please check your credentials.');
     } finally {
