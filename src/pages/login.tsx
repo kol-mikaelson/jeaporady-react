@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../auth/AuthContext';
+import LitsocNav from '../components/navbar';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -30,6 +31,8 @@ const LoginPage = () => {
   };
 
   return (
+    <>
+    <LitsocNav/>
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="max-w-md w-full space-y-8 p-8 bg-white rounded-lg shadow">
         <div>
@@ -90,6 +93,7 @@ const LoginPage = () => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 
