@@ -13,6 +13,8 @@ dist-ssr
 *.local
 src/firebase-config.tsx
 .firebase
+firebase.json
+home/purandhar
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
